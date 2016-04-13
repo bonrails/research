@@ -1,0 +1,3 @@
+== README
+
+<tt>rake db:create db:migrate data:dump</tt>.
