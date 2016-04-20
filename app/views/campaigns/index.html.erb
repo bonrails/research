@@ -1,0 +1,31 @@
+<div class="container" >
+  <b> 42 </b>
+  <ol>
+    <% @list.each do |item| %>
+      <% if item.campaign_quotas.present? %>
+        <% if  item.campaign_quotas.first.campaign_qualifications[0].question_id == 42 %>
+          <li> <%= item.name %></li>
+        <% end %>
+      <% end %>
+    <% end%>
+  </ol>
+  <b> 43 </b>
+  <ol>
+    <% @list.each do |item| %>
+      <% if item.campaign_quotas.present? %>
+        <% if  item.campaign_quotas.first.campaign_qualifications[0].question_id == 43 %>
+          <li>  <div class="<%= 'bold' if item.campaign_quotas.first.campaign_qualifications[0].pre_codes.include?('2') %>"> <%= item.name %> </div></li>
+        <% end %>
+      <% end %>
+    <% end %>
+  </ol>
+  <b> Empty </b>
+  <ol>
+    <% @list.each do |item| %>
+      <% unless item.campaign_quotas.present? %>
+        <li> <%= item.name %></li>
+      <% end%>
+    <% end %>
+  </ol>
+
+</div>
